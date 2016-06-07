@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">AndroidTraining</string>
+    <string name="question">Sample question</string>
+    <string name="trueTxt">True</string>
+    <string name="falseTxt">False</string>
+    <string name="rightTxt">Well done, correct answer!!</string>
+    <string name="wrongTxt">Sorry, wrong answer!!</string>
+    <string name="q1"> Question 1?</string>
+    <string name="q2"> Question 2?</string>
+    <string name="q3"> Question 3?</string>
+    <string name="q4"> Question 4?</string>
+    <string name="q5"> Question 5?</string>
+    <string name="q6"> Question 6?</string>
+    <string name="q7"> Question 7?</string>
+    <string name="q8"> Question 8?</string>
+    <string name="q9"> Question 9?</string>
+    <string name="q10"> Question 10?</string>
+    <string name="nextTxt">Next</string>
+    <string name="prevTxt">Prev</string>
+</resources>
