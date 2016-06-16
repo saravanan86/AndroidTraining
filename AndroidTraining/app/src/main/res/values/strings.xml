@@ -5,6 +5,7 @@
     <string name="falseTxt">False</string>
     <string name="rightTxt">Well done, correct answer!!</string>
     <string name="wrongTxt">Sorry, wrong answer!!</string>
+    <string name="cheatTxt">No cheating!!</string>
     <string name="q1"> Question 1?</string>
     <string name="q2"> Question 2?</string>
     <string name="q3"> Question 3?</string>
@@ -17,4 +18,8 @@
     <string name="q10"> Question 10?</string>
     <string name="nextTxt">Next</string>
     <string name="prevTxt">Prev</string>
+    <string name="cheatText">Are you sure you want to cheat?</string>
+    <string name="showAnswer">Show answer</string>
+    <string name="answer">Answer is \'%s\'</string>
+    <string name="cheat">Cheat</string>
 </resources>
