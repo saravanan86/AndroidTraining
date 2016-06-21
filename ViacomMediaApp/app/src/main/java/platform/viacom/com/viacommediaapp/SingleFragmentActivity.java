@@ -1,4 +1,4 @@
-package androidtutorial.example.com.criminalintent;
+package platform.viacom.com.viacommediaapp;
 
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -19,6 +19,7 @@ public abstract class SingleFragmentActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fragment);
         FragmentManager fragmentManager = getFragmentManager();
+
         Fragment fragment = fragmentManager.findFragmentById( R.id.fragmentContainer );
 
         if( fragment == null ){

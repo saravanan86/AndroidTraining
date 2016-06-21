@@ -1,0 +1,64 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+allprojects {
+    group = 'com.vmn.android'
+    ext {
+        def nexusPropsFile = rootProject.file('secure/nexus.properties')
+        LDAP_USERNAME = getProperty('LDAP_USERNAME', nexusPropsFile)
+        LDAP_PASSWORD = getProperty('LDAP_PASSWORD', nexusPropsFile)
+    }
+}
+
+static def getProperty(String prop, File propsFile) {
+    if (propsFile.exists()) {
+//if the user has a properties file, get the username and pass from there
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        return props[prop]
+    } else {
+//if not, try the environment variables (for ci / build servers)
+        return System.getenv(prop)
+    }
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.0.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        //jcenter()
+        maven {
+            credentials {
+                username LDAP_USERNAME
+                password LDAP_PASSWORD
+            }
+            url "http://nexus.mtvi.com/nexus/content/repositories/releases"
+        }
+        maven {
+            credentials {
+                username LDAP_USERNAME
+                password LDAP_PASSWORD
+            }
+            url "http://nexus.mtvi.com/nexus/content/repositories/thirdparty"
+        }
+        maven {
+            url 'http://maven.fabric.io/public'
+        }
+        //buildscript { repositories { maven { url 'https://maven.fabric.io/public' } } }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
